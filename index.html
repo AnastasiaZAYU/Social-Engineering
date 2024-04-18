@@ -3,9 +3,16 @@
 
 <head>
 	<meta charset="UTF-8">
+  	<script src="https://www.google.com/recaptcha/enterprise.js?render=6LePEL8pAAAAAEvCrV38wV30u9E3FjnCNN4wlmVX"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="ПроФільм, новини кіно, фільм, кінотеатр">
 	<meta name="robots" content="index, follow">
+	<script>
+  		function onClick(e) {
+    		e.preventDefault();
+    		grecaptcha.enterprise.ready(async () => {
+      		const token = await grecaptcha.enterprise.execute('6LePEL8pAAAAAEvCrV38wV30u9E3FjnCNN4wlmVX', {action: 'LOGIN'});});}
+	</script>
 
 	<title>ПроФільм</title>
 	<style>
