@@ -1,2 +1,3 @@
 User-agent: *
 Disallow: /page1.html
+Disallow: /page2.html
