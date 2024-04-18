@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /page1.html
