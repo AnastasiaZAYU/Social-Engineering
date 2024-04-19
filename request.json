@@ -1,25 +1,7 @@
-const apiKey = 'AIzaSyBrTa-1VvK7TRy5ZHhgvwEukFhgyZFvvVo';
-const url = 'https://recaptchaenterprise.googleapis.com/v1/projects/my-project-22787-1713425038301/assessments?key=' + apiKey;
-
-const data = {
+{
   "event": {
     "token": "03AFcWeA5y61R4W5BuqvQVOwykxUq9uOMfrRH-FrDrIQnUvBjMgvVCP1VFUOkJHejqKXFmLbT3xgFKuTt-0gfbZeDNV8qI6WYgKXZVuTwBTzOrXYGqeZEmhn5aCZu4Z_D22YV92he3a2Ns6DvBb5yvGB6o2uiZL-KQEunT0Vu-uccTDJZM57BbxXWtAoNRLfCjucwdQuDz0w3UiEqAmOpYOa2r_bjo-t2g8JzdV8wemJEnuAtu7hMf6F6-iiCTjvmqX78XSiqiZXr9fsNFfURNjncInken1tQl5ZN4t-YJH2U-RXMsNmt5OWPszCLwSX_3joHL5rwu6xw4ZnrWiREMSl3HPJt5UIMOkbq1OHhrCCNOe9VWutCcLaSQK_AIinDHHi0uCUFndrlNomV7MvpDLslKP2o-U6m3frV8Racd2uj4kle6kzY7cg1mYJVm8BXbz1bjh6tj23cUZFk65-FYV8mcHX12mW0KzIz1sEhastSEBx5ymN-VTmzoSC2mUp0XQUg411V_wV93u23HGSfhUqOeFtIFp0BSMaJitDNpzVIMdB_jfRFBLk1rWsIOE-mqQJ_-e2KsvsbVR5gj18xJdawY2LowgpVgyblCq9nngnO1Y0gqp1KX1mIFznYyjhdBJiqlZuCYDaWs-RjPzZoTPAjZ_yd3D2d8cIXYb2BU9UDan3UyFMykpBnS_Mt_tbcHLs2gHTe1CE4ZPPHn7542aaobAJODdDCkC1rG2DT4HQj59rKNzg0gh-MWDbEtq8HMAXub9hjPqdJCizbjsyPDLno4sjB5leWM9TVSz6-lKxI621r9y-nk9Q5JYRVihRmYOmOoKdtnLLoW6QvWRH3opYRHLaSihXUDN2Z3RkU5ND7AVhPuOXJ2NUW4U1b7U3UyhmCcJlGUKkRF3tZDzgwsFK-JYaCZuaVG96NWL7h3CorIM1WO-KyAYLpkoJ91ZuOfOX_o_tx9lhZHymWu8NTMewZDBG1rERGwbdz8OWxlFJGvVwhfkU7wR19OWal7yBSW7nOWxbIy4Vso9hnLVT7Hpcjr7XYW_p88kJRHJPx0V7L4zt2mw0fQKlGq7A9AUA61MA12NKJM7H8-xC8OobNtGlHUBMPCOwv47pANsSsMKQOMB8h9-EBm7nqNx8e0br_6RpakQhvnFha13U0-QQFIaSheGPGxN97cx_M55bkfwUnWn1PnrkoepyI99R8R6LEWz_UOL09iUBBvYJfOWyBZ4kQjbBzfMQQpC6_RQfIGF3stJXCjXxuP8G3NR71-PR9gM5wNAxZ_uPzLjLCMMIS081Vhnpo0qEq4I4-qlJ3okb3-0gTa9cnSrM63u64DKvkNrb6jujGLOYyAljYsJtsJvAW88KL-vbjYyx-0CTX3fFW5WlPNflwF9lparBPoVVpiZc_-VgXzfcHs3vBE1dT5F5ZG0anqq_lncRxjCBSIEWc95RtGmlnsfKzbCUT6N_aQ3P1WLxVLYqPvwJUUcK5e_trpZplGSMRlxFyyym7RTXzVwUoMCuVnxj0zQKv1gRhpsnrxPAEKbjXbO4nhRTFNW2uWhwO1zz1xXM6k9OsiiJ1zr0mXLkOzNSN9k6G_VvyiIsHUbdfjEo7tFnDgq220p1oijjW94QKehcdDvPy1pv_C4TK2S39Cu8S2FyB7RjMKwiCNHO4Fpa46dq1iKAZ0vMwdV1i73mFsQ__5RGqxi8GyX07ZeFRyVn_egbrVigl9Dy__3UohcridiAlWmc2NSuna8-9j-CELCg",
     "expectedAction": "USER_ACTION",
     "siteKey": "6LePEL8pAAAAAEvCrV38wV30u9E3FjnCNN4wlmVX",
   }
 }
-
-fetch(url, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(data),
-})
-.then(response => response.json())
-.then(data => {
-  console.log('Success:', data);
-})
-.catch((error) => {
-  console.error('Error:', error);
-});
