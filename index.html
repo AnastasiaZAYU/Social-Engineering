@@ -53,44 +53,17 @@
 		</div></div>
 	</section></main>
 
-	<script>
-		function onClick(e) {
-      		e.preventDefault();
-      		grecaptcha.enterprise.ready(async () => {
-        	const token = await grecaptcha.enterprise.execute('6LePEL8pAAAAAEvCrV38wV30u9E3FjnCNN4wlmVX', { action: 'LOGIN' });
-        	sendTokenToServer(token);
-      		});
-    	}
+	 <button onclick="onClick(event)">Клікніть, щоб отримати токен</button>
 
-		async function sendTokenToServer(token) {
-      		const url = 'https://anastasiazayu.github.io/Social-Engineering/';
-      		const userAction = 'USER_ACTION';
-      		const requestBody = {
-        	event: {
-          	token: token,
-          	expectedAction: userAction,
-          	siteKey: '6LePEL8pAAAAAEvCrV38wV30u9E3FjnCNN4wlmVX'
-        	}
-	};
-		try {
-        	const response = await fetch(url, {
-          	method: 'POST',
-          	headers: {
-            	'Content-Type': 'application/json'
-          	},
-          	body: JSON.stringify(requestBody)
-        	});
-        	if (response.ok) {
-          	const data = await response.json();
-          	console.log(data);
-        	} else {
-          	throw new Error('Network response was not ok.');
-        	}
-      		} catch (error) {
-        	console.error('There was a problem with your fetch operation:', error);
-      		}
-    	}
-	</script>
+  <script>
+    function onClick(e) {
+      e.preventDefault();
+      grecaptcha.enterprise.ready(async () => {
+        const token = await grecaptcha.enterprise.execute('6LePEL8pAAAAAEvCrV38wV30u9E3FjnCNN4wlmVX', { action: 'LOGIN' });
+        console.log(token); // Отриманий токен буде виведено в консолі для перевірки
+      });
+    }
+  </script>
 
 	<footer>
 		<p>&copy; 2024 ПроФільм. Усі права захищені.</p>
