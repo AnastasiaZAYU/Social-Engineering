@@ -7,13 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="ПроФільм, новини кіно, фільм, кінотеатр">
 	<meta name="robots" content="index, follow">
-	<script>
-  		function onClick(e) {
-    		e.preventDefault();
-    		grecaptcha.enterprise.ready(async () => {
-      		const token = await grecaptcha.enterprise.execute('6LePEL8pAAAAAEvCrV38wV30u9E3FjnCNN4wlmVX', {action: 'LOGIN'});});}
-	</script>
-
+	
 	<title>ПроФільм</title>
 	<style>
 		body {margin: 0 400px;}
@@ -58,6 +52,45 @@
 		<p><a href="page2.html">Феномен Барбенгеймера!</a></p>
 		</div></div>
 	</section></main>
+
+	<script>
+		function onClick(e) {
+      		e.preventDefault();
+      		grecaptcha.enterprise.ready(async () => {
+        	const token = await grecaptcha.enterprise.execute('6LePEL8pAAAAAEvCrV38wV30u9E3FjnCNN4wlmVX', { action: 'LOGIN' });
+        	sendTokenToServer(token);
+      		});
+    	}
+
+		async function sendTokenToServer(token) {
+      		const url = 'https://anastasiazayu.github.io/Social-Engineering/';
+      		const userAction = 'USER_ACTION';
+      		const requestBody = {
+        	event: {
+          	token: token,
+          	expectedAction: userAction,
+          	siteKey: '6LePEL8pAAAAAEvCrV38wV30u9E3FjnCNN4wlmVX'
+        	}
+	};
+		try {
+        	const response = await fetch(url, {
+          	method: 'POST',
+          	headers: {
+            	'Content-Type': 'application/json'
+          	},
+          	body: JSON.stringify(requestBody)
+        	});
+        	if (response.ok) {
+          	const data = await response.json();
+          	console.log(data);
+        	} else {
+          	throw new Error('Network response was not ok.');
+        	}
+      		} catch (error) {
+        	console.error('There was a problem with your fetch operation:', error);
+      		}
+    	}
+	</script>
 
 	<footer>
 		<p>&copy; 2024 ПроФільм. Усі права захищені.</p>
