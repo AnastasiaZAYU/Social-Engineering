@@ -65,6 +65,33 @@
     }
   </script>
 
+<script>
+        fetch('request.json')
+            .then(response => response.json())
+            .then(data => {
+                fetch('https://recaptchaenterprise.googleapis.com/v1/projects/my-project-22787-1713425038301/assessments?key=AIzaSyBrTa-1VvK7TRy5ZHhgvwEukFhgyZFvvVo', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(result => {
+                    console.log('Success:', result);
+                    // Обробка відповіді з сервера
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    // Обробка помилки
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Обробка помилки отримання JSON-даних з файлу
+            });
+</script>
+
 	<footer>
 		<p>&copy; 2024 ПроФільм. Усі права захищені.</p>
 	</footer>
